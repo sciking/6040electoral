@@ -11,6 +11,7 @@ prod = 0
 totp = 0
 totd = 0
 tots = 0
+disp = 0
 while i < 24: #Dunque 40 seggi, 16 dh
 	print("Tornata %d"%(i+1))
 	votp = random.randint(100,400)
@@ -27,28 +28,34 @@ while i < 24: #Dunque 40 seggi, 16 dh
 		print("Seggio POPOLARE")
 		if votd > vots:
 			prod = prod + votd
-			print("Proporze DEMOCRISTIANA")
+			print("Proporzionale DEMOCRISTIANA")
+			disp = disp + vots
 		else:
 			pros = pros + vots
-			print("Proporze SOCIALISTA")
+			print("Proporzionale SOCIALISTA")
+			disp = disp + votd
 	if vots > votp and vots > votd:
 		seggis = seggis +1
 		print("Seggio SOCIALISTA")
 		if votd > votp:
 			prod = prod + votd
-			print("Proporze DEMOCRISTIANA")
+			print("Proporzionale DEMOCRISTIANA")
+			disp = disp + votp
 		else:
 			prop = prop + votp
-			print("Proporze POPOLARE")
+			print("Proporzionale POPOLARE")
+			disp = disp + votd
 	if votd > vots and votd > votp:
 		seggid = seggid +1
 		print("Seggio DEMOCRISTIANO")
 		if votp > vots:
 			prop = prop + votp
-			print("Proporze POPOLARE")
+			print("Proporzionale POPOLARE")
+			disp = disp + vots
 		else:
 			pros = pros + vots
-			print("Proporze SOCIALISTA")
+			print("Proporzionale SOCIALISTA")
+			disp = disp + votp
 	i = i + 1
 print("RISULTATO FINALE")
 print "*"*35
@@ -63,6 +70,7 @@ print "*"*35
 print("Voti popolari: ",totp)
 print("Voti socialisti: ",tots)
 print("Voti democristiani: ",totd)
+print("Voti DISPERSI: ",disp)
 totel = totp + tots + totd
 print("TOTALE VOTI: ",totel)
 print "*"*35
