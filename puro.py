@@ -121,7 +121,7 @@ print("Seggi socialisti: "+str(seggis))
 print("Seggi democristiani: "+str(seggid))
 print "*"*35
 print("CON SISTEMA MERAMENTE PROPORZIONALE:")
-seggip,seggis,seggis = 0,0,0
+seggip,seggis,seggid = 0,0,0
 proporzionale(40,totel,totp,tots,totd)
 print("Ipotetici popolari: "+str(seggip))
 print("Ipotetici socialisti: "+str(seggis))
